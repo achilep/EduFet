@@ -11,6 +11,7 @@ public class StudentDto {
     private Integer REGNO;
     private Integer ROLLNO;
     private String CLASS;
+    private String NAME;
     private String FNAME;
     private String MNAME;
     @JsonFormat(pattern = "yyyy-MM-dd")

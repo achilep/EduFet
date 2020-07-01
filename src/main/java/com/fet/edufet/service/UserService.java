@@ -20,7 +20,7 @@ public class UserService {
 
     public String verify(UserDto dto) {
 
-        Optional<User> userOptional= repository.findByUsername(dto.getUsername());
+        Optional<User> userOptional= repository.findByUSERNAME(dto.getUsername());
         if(userOptional.isPresent()){
             User user = userOptional.get();
             if(user.getPASSWORD().equals(dto.getPassword())) {

@@ -5,10 +5,7 @@ import com.fet.edufet.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,8 +20,31 @@ public class StudentController {
         this.service = service;
     }
 
-//    @GetMapping("/students")
-//    public ResponseEntity<List<StudentDto>> getAll() {
-//        return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
-//    }
+    @GetMapping("/student")
+    public ResponseEntity<List<StudentDto>> getAll() {
+        return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/student/{id}")
+    public ResponseEntity<StudentDto> getOne(@PathVariable Integer id){
+        return new ResponseEntity<>(service.getOne(id),HttpStatus.OK);
+    }
+
+    @PostMapping("/student")
+    public ResponseEntity<StudentDto> saveUser(@RequestBody StudentDto studentDto) {
+        return new ResponseEntity<>(service.save(studentDto),HttpStatus.CREATED);
+    }
+
+    @PutMapping("/student/{id}")
+    public ResponseEntity<?> modifyUser(@PathVariable Integer id , @RequestBody StudentDto dto) {
+        service.update(id,dto);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @DeleteMapping("/student/{id}")
+    public ResponseEntity<?> deleteUser(@PathVariable Integer id) {
+        service.deleteOne(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }

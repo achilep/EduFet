@@ -12,29 +12,23 @@ import javax.validation.constraints.Size;
 public class Result {
 
     @Id
-    @Column(name = "resultno")
-    @Size(min=5, max=5,message ="RESULTNO must be 5")
+    @Column(name = "resultno",length = 5)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer RESULTNO;
 
-    @Column(name = "subject_name")
-    @Size(min=15, max=15,message ="SUBJECT_NAME must be 5")
+    @Column(name = "subject_name",length = 15)
     private String SUBJECT_NAME;
 
-    @Column(name = "max_marks")
-    @Size(min=5, max=5,message ="MAX_MARKS must be 5")
+    @Column(name = "max_marks",length = 5)
     private Integer MAX_MARKS;
 
-    @Column(name = "pass_marks")
-    @Size(min=3, max=3,message ="PASS_MARKS must be 5")
+    @Column(name = "pass_marks",length = 3)
     private Integer PASS_MARKS;
 
-    @Column(name = "marks_obt")
-    @Size(min=3, max=3,message ="MARKS_OBT must be 3")
+    @Column(name = "marks_obt",length = 3)
     private Integer MARKS_OBT;
 
-    @Column(name = "result")
-    @Size(min=4, max=4,message ="RESULT must be 5")
+    @Column(name = "result",length = 4)
     private String RESULT;
 
     @ManyToOne

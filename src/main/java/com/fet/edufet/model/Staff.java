@@ -1,5 +1,7 @@
 package com.fet.edufet.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -7,6 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "staff_tbl")
+@Data
 public class Staff {
 
     @Id

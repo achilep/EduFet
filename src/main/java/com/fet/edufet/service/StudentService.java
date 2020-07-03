@@ -7,6 +7,7 @@ import com.fet.edufet.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -72,7 +73,7 @@ public class StudentService {
         student.setCITY(studentDto.getCITY());
         student.setCLASS(studentDto.getCLASS());
         student.setDOB(studentDto.getDOB());
-        student.setDOR(studentDto.getDOR());
+        student.setDOR(LocalDate.now());
         student.setFNAME(studentDto.getFNAME());
         student.setMNAME(studentDto.getMNAME());
         student.setNAME(studentDto.getNAME());

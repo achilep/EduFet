@@ -1,3 +1,6 @@
 EduFet Backend
+======
+
 Clone and cd to directory.
-Open in IDE and run.
+Then run mvn spring-boot:run
+or Open in IDE and run.

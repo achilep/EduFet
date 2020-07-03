@@ -10,3 +10,7 @@ INSERT INTO staff_tbl(
 	VALUES (2, 'soppo', 12600, 'buea', 'chemistry', '1989-05-09',  '2009-10-10', 'john@mail', 'john', '6421868', 'N', 'permanent', '6482135', '1234', 'T', 'on-leave');
 INSERT INTO user_tbl(user_id, password, username)
 	VALUES (1, 'password', 'admin');
+INSERT INTO fee_tbl(feeno, depdate, feedep, fine, student_regno)
+	VALUES (1,'2020-02-03', 2500, 300, 1);
+INSERT INTO fee_tbl(feeno, depdate, feedep, fine, student_regno)
+	VALUES (2,'2020-02-03', 2500, 0, 2);
